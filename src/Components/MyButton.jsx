@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MyButton = ({ children }) => {
+const MyButton = ({ children, disabled = false }) => {
   return (
-    <button className='bg-black text-white p-3 rounded-lg'>{children}</button>
+    <button disabled={disabled} className='bg-black disabled:bg-gray-700 text-white p-3 rounded-lg'>{children}</button>
   )
 }
 

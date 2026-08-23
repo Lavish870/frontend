@@ -15,7 +15,8 @@ export const home = () => {
         <MyCard title={'Card Title 2'} description={'Card Description 2'} btnText={'Explore'} />
       </div>
 
-      <MyButton>Submit</MyButton>
+      <MyButton disabled={true}>Submit</MyButton>
+      <MyButton>Learn More</MyButton>
     </div>
   )
 };
