@@ -1,3 +1,4 @@
+import MyButton from '@/Components/MyButton';
 import MyCard from '@/Components/MyCard';
 import React from 'react'
 
@@ -13,6 +14,8 @@ export const home = () => {
 
         <MyCard title={'Card Title 2'} description={'Card Description 2'} btnText={'Explore'} />
       </div>
+
+      <MyButton>Submit</MyButton>
     </div>
   )
 };
