@@ -11,6 +11,17 @@ const EventHandling = () => {
 
             <button onClick={() => { alert('button was clicked') } } className='bg-blue-500 text-white p-3 rounded-lg'> Click Me</button>
 
+            <input type="text" 
+            className='border p-3 block mt-4'
+            onChange={(e) => {document.body.style.backgroundColor=e.target.value;}} 
+            />
+
+            <input type="file" onChange={(e) => {console.log(e.target.files)}} />
+
+            <input type="text"  className='block mt-4 border'
+            onKeyDown={(e) => {console.log(e.code)}}
+            />
+
         </div>
     </div>
   )
