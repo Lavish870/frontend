@@ -1,6 +1,15 @@
 'use client'
 import { useFormik } from 'formik'
 import React from 'react'
+import * as Yup from 'yup';
+
+const SignupSchema = Yup.object().shape({
+   name: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+   email: Yup.string().email('Invalid email').required('Required'),
+ });
 
 const signup = () => {
 
@@ -102,7 +111,7 @@ const signup = () => {
               <div>
                 <label htmlFor="confirm-password" className="block text-sm mb-2 text-gray-800">Confirm Password</label>
                 <div className="relative">
-                  <input type="password" id="confirm-password" onChange={signupForm.handleChange} value={signupForm.values.confirmPassword} className="border py-2.5 sm:py-3 px-4 block w-full bg-white border-gray-200 rounded-lg sm:text-sm text-gray-800 placeholder:text-gray-500 focus:border-blue-700 focus:ring-blue-700 disabled:opacity-50 disabled:pointer-events-none" required aria-describedby="confirm-password-error" />
+                  <input type="password" id="confirmPassword" onChange={signupForm.handleChange} value={signupForm.values.confirmPassword} className="border py-2.5 sm:py-3 px-4 block w-full bg-white border-gray-200 rounded-lg sm:text-sm text-gray-800 placeholder:text-gray-500 focus:border-blue-700 focus:ring-blue-700 disabled:opacity-50 disabled:pointer-events-none" required aria-describedby="confirm-password-error" />
                   <div className="hidden absolute inset-y-0 inset-e-0 pointer-events-none pe-3">
                     <svg className="size-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
